@@ -1,0 +1,38 @@
+.CarListWrap {
+    position: relative;
+}
+
+.filter {
+    overflow: hidden;
+    position:sticky;
+    width: 100vw;
+    background:#8cc18B ;
+    display: flex ;
+    justify-content: left;
+    
+}
+
+.filter > button {
+    background:#8B8B8B ;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    padding: 5px 10px;
+    min-width:60px;
+}
+
+.filter > button:focus {
+    background-color: rgb(86, 148, 148);
+    border-style: 5px solid #FF9A02;
+}
+
+
+.carListWrap{
+    
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
