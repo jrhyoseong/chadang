@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
-      position: 'absolute',
+      position: 'fixed',
       bottom: 70,
       right: 0
     },

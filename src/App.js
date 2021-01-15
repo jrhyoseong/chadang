@@ -7,6 +7,8 @@ import './reset.css';
 import AppBar from './components/AppBar/AppBar'
 import BottomBar from './components/BottomBar/BottomBar'
 import Calendar from './components/Calendar'
+import Calendar2 from './components/Calendar2'
+import AntCalendar from './components/AntCalendar'
 import Floating from './components/Floating'
 import CarListView from './components/BottomBar/CarListView'
 import Modal from './components/BottomBar/Modal'
@@ -28,9 +30,10 @@ function App() {
 
       <section >
         <acticle className="calendarWrap">
+        {/* <Calendar/>
+        <AntCalendar /> */}
+        <Calendar2/>
           
-          
-          <Calendar></Calendar>
           
         </acticle>
         <acticle className="floatingWrap">

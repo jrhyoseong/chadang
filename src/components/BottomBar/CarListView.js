@@ -5,11 +5,25 @@ import './carFilter.css'
 import CallIcon from '@material-ui/icons/Call';
 import EditIcon from '@material-ui/icons/Edit'
 import Modal from './Modal'
+import Grid from '@material-ui/core/Grid'
 
+function 카리스트뷰() {
+    let [카데이터, 변동카데이터] = useState (CarData)
+    return(
+        <div className="CarListWrap">            
+            <차량필터/>
+           {
+               카데이터.map((a,i)=>{return (<카정보컴포넌트 carlist={a} />)})
+           }
+        </div>
+    )
+}
+
+export default 카리스트뷰
 
 function 차량필터(props) {
     return (
-            <div className="filter">
+            <div className="typefilter">
                 <button>대기</button>
                 <button>경차</button>
                 <button>소형</button>
@@ -30,20 +44,22 @@ function 카정보컴포넌트(props) {
     let [btn, setBtn] = useState(false);
     return(
         <>   
-        <div className="carListWrap" tem xs={12} >
-            <div  >
-                <img src={props.carlist.carimg} alt="dd"/>   
+        <div className="carListWrap" >
+            <Grid container direction="column" justify="space-evenly" alignItems="center" item xs={3}>
+                <img src={props.carlist.carImg} alt="dd"/>   
                 <p>{props.carlist.lisence_plate}</p>
-            </div>
-            <div>
-                <p>{props.carlist.location}</p>
-                <p>{props.carlist.model}</p>
-                <p>{props.carlist.type}</p>
-            </div>
-            
-            <CallIcon onClick={()=>{setBtn(true)} } />
-            <EditIcon />
-            <ModalPage ttt={btn}/>
+            </Grid>
+            <Grid container direction="column" justify="space-evenly" alignItems="flex-star"item xs={7} >
+                <p>위치 : {props.carlist.location}</p>
+                <p>소속 : {props.carlist.company}</p>
+                <p>상태 : {props.carlist.carstate[0]}</p>
+            </Grid>
+            <Grid container direction="column" justify="center" alignItems="center" spacing={2} item xs={2} >
+                <CallIcon fontSize='large' spacing={1} onClick={()=>{setBtn(true)} } />
+                <ModalPage ttt={btn}/>
+                <EditIcon fontSize='large' />
+            </Grid>
+           
         </div>
         <hr/>   
         </>
@@ -56,23 +72,3 @@ function 카정보컴포넌트(props) {
 
 
 
-function 카리스트뷰() {
-    let [카데이터, 변동카데이터] = useState (CarData)
-    return(
-        <div className="CarListWrap">
-            <Modal/>
-            
-            <차량필터/>
-           {
-               카데이터.map((a,i)=>{
-                   return ( 
-            <카정보컴포넌트 carlist={a} />
-                   )
-               })
-           }
-           
-        </div>
-    )
-}
-
-export default 카리스트뷰

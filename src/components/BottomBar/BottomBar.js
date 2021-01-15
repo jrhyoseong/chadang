@@ -11,7 +11,7 @@ import CarListCard from './CarListButton'
 const useStyles = makeStyles({
   root: {
     width: '100vw',
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     backgroundColor: '#2E8CB8',
     borderRadius: '20px 20px 0 0',
